@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Live breakscreen for Twitch.tv/aznmike">
+	<meta name="keywords" content="twitch, overlay">
+	<meta name="author" content="Michael Macasiano">
+	<title>Video games are awful</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="css/all.css" rel="stylesheet">
+</head>
+
+<script>
+	function startTime() {
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+
+		m = checkTime(m);
+
+		document.getElementById('timeHours').innerHTML = h;
+		document.getElementById('timeMinutes').innerHTML = m;
+
+		var t = setTimeout(startTime, 500);
+	}
+	function checkTime(i) {
+		if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		return i;
+	}
+	function UTCplusOne(i) {
+		i++;
+		if (i > 23) {i = 0};
+		return i;
+	}
+</script>
+
+<body onload="startTime()">
+	<div id="streamCanvas">
+		<div class="topBar">
+			<div class="topBarSegment">
+				<span class="topBarItem"><i class="fas fa-pizza-slice"></i></span>
+				<span class="topBarItem">mikeOS</span>
+			</div>
+			<div class="topBarSegment">
+				<span class="topBarItem"><i class="fas fa-video"></i> gaming-pc.ndi</span>
+				<span class="topBarItem">|</span>
+				<span class="topBarItem"><i class="fas fa-image"></i> humble-promo.png</span>
+				<span class="topBarItem">|</span>
+				<span class="topBarItem"><i class="fas fa-file-alt"></i> stream-update.txt</span>
+			</div>
+			<div class="topBarSegment">
+				<span class="topBarItem"><i class="fab fa-steam"></i></span>
+				<span class="topBarItem"><i class="fas fa-volume-up"></i></span>
+				<span class="topBarItem"><i class="fas fa-microchip"></i> 14%</span>
+				<span class="topBarItem"><i class="fas fa-wifi"></i></span>
+				<span class="topBarItem"><span id="timeHours"></span><span class="timeTick">:</span><span id="timeMinutes"></span></span>
+			</div>
+		</div>
+
+		<div class="streamUpdates">
+			Thanks for watching the stream. Be sure to like, comment, and subscribe or follow or retweet? Do whatever it is people do these days.
+			<br><br>
+			For updates on me and the stream, be sure to follow me on Twitter, <span class="highlightBlue">@mikeheartu</span>. I guess you could just look at the feed without following but that would be kind of rude. Like, seriously. Who does that?
+			<br><br>
+			On an unrelated note, how wild would it be if Twitter had stories like Snapchat or Instagram. Like, you tweet and then 24 hours later it just disappears. Would that be tight or nah? I would be so down to use that. I could just say whatever kind of garbage then it would just go away.
+			<br><br>
+			What am I even talking about here. Who is even about to read all this lol? Not me that's for sure. I'll probably forget to talk about it on stream too and it'll get lost in the background of something.
+		</div>
+
+		<img width="360" class="humbleImage" src="img/october2020_square_threetitles_v1_EN (1).jpg">
+	</div>
+</body>
+
+</html>
